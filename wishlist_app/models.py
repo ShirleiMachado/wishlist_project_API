@@ -14,7 +14,7 @@ class Product(models.Model):
   image = models.ImageField(upload_to='product_img')
   brand = models.CharField(max_length=50)
   title = models.CharField(max_length=50)
-  reviewScore = models.FloatField(max_length=4, decimal_places=2)
+  reviewScore = models.DecimalField(max_digits=4,decimal_places=2)
 
   def __str__(self):
     return self.title

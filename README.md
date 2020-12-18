@@ -35,7 +35,16 @@ python -c "import secrets; print(secrets.token_urlsafe())"
 ```
 > **Não esqueça que a chave deve estar entre aspas no settings .py.**
 
-5 - No MySQL crie uma tabela e atualize as informações NOME, USER e PASSWORD em DATABASES no settings.py.
+5 - No MySQL crie um database e atualize as informações NOME, USER e PASSWORD em DATABASES no settings.py ou se preferir, cole o codigo abaixo em DATABASES e use o *sqlite3* nativo do Django.
+
+```
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
+```
 
 6 - O Comando abaixo irá criar a tabela e as colunas.
 ```
@@ -48,7 +57,6 @@ python manage.py createsuperuser --email admin@example.com --username admin
  ```
 > **Você pode alterar o email e o username se quiser**
 
-Termine com um exemplo de como obter dados do sistema ou como usá-los para uma pequena demonstração.
 
 8 - Nessa etapa, você pode rodar a aplicação e cadastrar os Clientes e Produtos ou pode usar o *Faker* (pacote que gera dados falsos para você), se optar por ele pode usar esse comando:
 ```
