@@ -1,5 +1,4 @@
-"""wishlist_api URL Configuration
-
+"""aplicacao URL Configuration
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.1/topics/http/urls/
 Examples:
@@ -14,8 +13,19 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from wishlist_app.views import ClientsViewSet, ProductsViewSet, FavProductsViewSet
+from rest_framework import routers
+from django.conf import settings
+from django.conf.urls.static import static
 
-urlpatterns = [
+router = routers.DefaultRouter()
+router.register('clients', ClientsViewSet, basename='Clients')
+router.register('products', ProductsViewSet, basename='Products')
+router.register('Fav_Products', FavProductsViewSet, basename='FavProducts')
+
+urlpatterns = [    
     path('admin/', admin.site.urls),
-]
+    path('api-auth/', include('rest_framework.urls')),
+    path('', include(router.urls)),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
