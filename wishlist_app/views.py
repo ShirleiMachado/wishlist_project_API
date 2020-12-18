@@ -1,12 +1,9 @@
 from rest_framework import viewsets, generics, filters
 from wishlist_app.models import Client, Product, Fav_Product
-from wishlist_app.serializer import ClientSerializer, ProductSerializer, FavProductSerializer
+from wishlist_app.serializers import ClientSerializer, ProductSerializer, FavProductSerializer
 from rest_framework.authentication import BasicAuthentication
 from rest_framework.permissions import IsAuthenticated
 from django_filters.rest_framework import DjangoFilterBackend
-
-# class ApiViewSet(viewsets.ModelViewSet):
-#     """API de Produtos Favoritos"""
 
 class ClientsViewSet(viewsets.ModelViewSet):
     """Todos os clientes"""
