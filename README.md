@@ -1,4 +1,4 @@
-# Wishlist APIRest
+# Wishlist APIRest Project
 
 Nessa API é possível cadastrar, atualizar, visualizar e remover clientes, Produtos e criar uma lista de Produtos favoritos.
 
@@ -6,7 +6,6 @@ Nessa API é possível cadastrar, atualizar, visualizar e remover clientes, Prod
 
 Para rodar essas aplicação é preciso ter o Python 3 e o MySQL instalados 
 
-Consulte **Implantação** para saber como implantar o projeto.
 
 ### 📋 Pré-requisitos
 
