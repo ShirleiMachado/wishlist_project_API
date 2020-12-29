@@ -94,3 +94,21 @@ Uma API criada com o DRF - *Django REST FrameWork*
 **FAV_PRODUCTS: http://127.0.0.1:8001/Fav_Products/**
 
 ![image](https://user-images.githubusercontent.com/62224847/102553532-c2614900-40a1-11eb-8170-5ab47ffce2dc.png)
+
+## 🖇️ Melhorias
+
+- Inclusão de paginação
+```
+ 'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+'PAGE_SIZE': 10
+```
+- Relacionamento
+
+Em produtos favoritos mostrar além do id do produto, todas as outras informações de cada produto favorito. Incuindo no serializer o atributo **Nested relationships**
+
+```
+ product = ProductSerializer(many=True, read_only=True)
+```
+    
+- Autenticação via token usando o *rest_framework.authtoken*
+
